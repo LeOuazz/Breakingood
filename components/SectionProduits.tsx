@@ -41,7 +41,6 @@ export default function SectionProduits() {
                         <div className="relative w-full h-[90vh]">
                             <Image
                                 src={cat.image}
-                                alt={cat.title}
                                 fill
                                 className="object-cover"
                                 priority={idx === 0} // optimise le chargement du premier slide
