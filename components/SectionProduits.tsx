@@ -15,7 +15,7 @@ export default function SectionProduits() {
     ];
 
     return (
-        <section className="relative w-full h-[90vh]">
+        <section className="relative w-full min-h-screen p-0 md:min-h-[90vh] md:py-10">
             <Swiper
                 modules={[Autoplay, Navigation]}
                 slidesPerView={1}
@@ -26,12 +26,13 @@ export default function SectionProduits() {
             >
                 {categories.map((cat, idx) => (
                     <SwiperSlide key={idx}>
-                        <div className="relative w-full h-[90vh] bg-white flex items-center justify-center">
+                        <div className="relative w-full h-screen md:h-[90vh] flex items-center justify-center">
                             <Image
                                 src={cat.image}
                                 alt=""
-                                fill
-                                className="object-contain"
+                                width={400}
+                                height={400}
+                                className="object-contain max-h-[80vh]"
                                 priority={idx === 0}
                             />
                         </div>
@@ -41,3 +42,4 @@ export default function SectionProduits() {
         </section>
     );
 }
+
