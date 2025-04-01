@@ -8,22 +8,10 @@ import 'swiper/css/navigation';
 
 export default function SectionProduits() {
     const categories = [
-        {
-
-            image: "/images/fruits-secs.png",
-        },
-        {
-
-            image: "/images/biscuits.png",
-        },
-        {
-
-            image: "/images/bonbons.png",
-        },
-        {
-
-            image: "/images/boissons.png",
-        },
+        { image: "/images/fruits-secs.png" },
+        { image: "/images/biscuits.png" },
+        { image: "/images/bonbons.png" },
+        { image: "/images/boissons.png" },
     ];
 
     return (
@@ -38,19 +26,14 @@ export default function SectionProduits() {
             >
                 {categories.map((cat, idx) => (
                     <SwiperSlide key={idx}>
-                        <div className="relative w-full h-[90vh]">
+                        <div className="relative w-full h-[90vh] bg-white flex items-center justify-center">
                             <Image
                                 src={cat.image}
-                                alt={cat.title}
+                                alt=""
                                 fill
-                                className="object-cover"
-                                priority={idx === 0} // optimise le chargement du premier slide
+                                className="object-contain"
+                                priority={idx === 0}
                             />
-                            <div className="absolute inset-0 flex items-center justify-center">
-                                <h2 className="text-white text-4xl md:text-5xl font-extrabold uppercase drop-shadow-lg">
-                                    {cat.title}
-                                </h2>
-                            </div>
                         </div>
                     </SwiperSlide>
                 ))}
